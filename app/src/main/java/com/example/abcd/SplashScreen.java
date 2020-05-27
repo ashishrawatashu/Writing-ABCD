@@ -1,9 +1,7 @@
 package com.example.abcd;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -14,19 +12,21 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class SplashScreen extends AppCompatActivity {
+
     Animation animation;
     ImageView splash_logo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        splash_logo= (ImageView) findViewById(R.id.splashlogo);
+        splash_logo= findViewById(R.id.splashlogo);
+
         animation = AnimationUtils.loadAnimation(SplashScreen.this, R.anim.bounce);
         try {
             PackageInfo info = getPackageManager().getPackageInfo(

@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static int RC_SIGN_IN = 1;
     private static final String EMAIL = "email";
     private static final String USER_POSTS = "user_posts";
-    private static final String AUTH_TYPE = "rerequest";
     String name_string ="", user_PhotoUrl="" , email_string ="";
     AccessTokenTracker fbTracker;
     LoginButton loginButton;

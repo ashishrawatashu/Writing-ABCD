@@ -1,20 +1,18 @@
 package com.example.abcd;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.squareup.picasso.Picasso;
-
 import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,6 +31,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
+
         imageView = findViewById(R.id.image_view);
         logOut = findViewById(R.id.logout);
 
@@ -44,6 +43,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         write_ABC_BT.setOnClickListener(this);
         write_123_BT.setOnClickListener(this);
         logOut.setOnClickListener(this);
+
 
     }
 
