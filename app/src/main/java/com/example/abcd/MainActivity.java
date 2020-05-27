@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -20,10 +22,17 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.squareup.picasso.Picasso;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener, View.OnClickListener  {
 
@@ -33,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     int potion = 0, click=0;
     private RewardedVideoAd mRewardedVideoAd;
     AdView adView;
+    CircleImageView imageView;
+    String image;
+    ImageView logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
         init();
         bannerAdd();
+        Picasso.with(this).load(Constants.image).into(imageView);
         MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener((RewardedVideoAdListener) this);
@@ -51,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     }
 
     private void init() {
+        logOut = findViewById(R.id.logout);
+        imageView = findViewById(R.id.image_view);
         adView = findViewById(R.id.adView);
         nextLetterBT = findViewById(R.id.nextLetterBT);
         clearLetterBT = findViewById(R.id.clearLetterBT);
@@ -58,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         letterTV = findViewById(R.id.letterTV);
         nextLetterBT.setOnClickListener(this);
         clearLetterBT.setOnClickListener(this);
+        logOut.setOnClickListener(this);
         clearLetterBT.setEnabled(false);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
@@ -83,6 +99,24 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
             case R.id.clearLetterBT:
                 signaturePad.clear();
+                break;
+
+
+            case R.id.logout:
+
+                LoginManager.getInstance().logOut();
+
+                GoogleSignInOptions gso = new GoogleSignInOptions.
+                        Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                        build();
+
+                GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(getApplicationContext(), gso);
+                googleSignInClient.signOut();
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+
+
                 break;
 
         }
