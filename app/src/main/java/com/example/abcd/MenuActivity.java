@@ -26,7 +26,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_menu);
 
         init();
-        Picasso.with(this).load(Constants.image).into(imageView);
+        //Picasso.with(this).load(Constants.image).into(imageView);
 
     }
 
@@ -73,7 +73,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
-            case R.id.logout:
+          /*  case R.id.logout:
 
                 LoginManager.getInstance().logOut();
 
@@ -89,8 +89,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 break;
-
+*/
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

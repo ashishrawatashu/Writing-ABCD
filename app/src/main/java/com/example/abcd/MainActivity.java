@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
         init();
         bannerAdd();
-        Picasso.with(this).load(Constants.image).into(imageView);
+        //Picasso.with(this).load(Constants.image).into(imageView);
         MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener((RewardedVideoAdListener) this);
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 break;
 
 
-            case R.id.logout:
+           /* case R.id.logout:
 
                 LoginManager.getInstance().logOut();
 
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 startActivity(intent);
 
 
-                break;
+                break;*/
 
         }
     }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/pic"
     tools:context=".MenuActivity">
     <com.google.android.material.appbar.AppBarLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/app_bar_layout"
@@ -74,25 +76,53 @@
         android:layout_height="match_parent">
 
     <Button
+        android:textColor="#ffff"
+        android:background="@drawable/button_round"
         android:id="@+id/write_ABC_BT"
-        android:text="Write ABC"
+        android:text="ABC"
+        android:textSize="50dp"
+        android:fontFamily="@font/unicorn"
         android:textAllCaps="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textStyle="bold"/>
 
         <Button
+            android:textColor="#ffff"
             android:id="@+id/write_abc_BT"
-            android:text="Write abc"
-            android:textAllCaps="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="50dp"
+            android:background="@drawable/button_yellow"
+            android:fontFamily="@font/unicorn"
+            android:text="abc"
+            android:textAllCaps="false"
+            android:textStyle="bold"/>
 
         <Button
+            android:textColor="#ffff"
+            android:textSize="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_green"
             android:textAllCaps="false"
             android:id="@+id/write_123_BT"
-            android:text="Write 123"
+            android:text="123"
+            android:fontFamily="@font/unicorn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
 
     </LinearLayout>
-</LinearLayout>
+
+    <Button
+        android:visibility="gone"
+        android:layout_margin="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/share"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

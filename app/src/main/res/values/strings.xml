@@ -60,6 +60,9 @@
     </string-array>
     <string name="facebook_app_id">586107458689658</string>
     <string name="fb_login_protocol_scheme">fb586107458689658</string>
+    <string name="banner_ads_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="rewarded_ads_unit_id">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>
 
 
 </resources>

@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
+    android:background="#ffff"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
   <com.google.android.material.appbar.AppBarLayout
+      android:visibility="gone"
       android:layout_width="match_parent"
       android:layout_height="60dp"
       android:id="@+id/app_bar_layout"
@@ -62,7 +64,7 @@
   </com.google.android.material.appbar.AppBarLayout>
 
   <LinearLayout
-      android:background="@color/colorPrimary"
+      android:background="@drawable/background"
       android:layout_weight="60"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
@@ -73,8 +75,10 @@
         tools:ignore="UselessParent">
 
       <TextView
+          android:textColor="#ffff"
           android:id="@+id/letterTV"
           android:text="A"
+          android:fontFamily="@font/whale"
           android:textSize="200dp"
           android:gravity="center_horizontal"
           android:layout_width="match_parent"
@@ -82,14 +86,14 @@
 
 
       <Button
+          android:background="@drawable/next"
           android:id="@+id/nextLetterBT"
           android:layout_marginRight="30dp"
           android:layout_alignParentEnd="true"
           android:layout_marginBottom="10dp"
-          android:text="Next"
           android:layout_alignParentBottom="true"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
+          android:layout_width="70dp"
+          android:layout_height="60dp"
           android:layout_alignParentRight="true" />
 
 
@@ -109,19 +113,23 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent">
         <com.github.gcacace.signaturepad.views.SignaturePad
+            android:background="#696969"
             android:layout_width="match_parent"
+            app:penColor="#ffff"
+            app:penMinWidth="10dp"
+            app:penMaxWidth="15dp"
             android:layout_height="match_parent"
             android:id="@+id/signaturePad"/>
 
         <Button
+            android:background="@drawable/eraser"
             android:id="@+id/clearLetterBT"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="30dp"
-            android:text="Clear"
             android:layout_alignParentBottom="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true" />
 
       </RelativeLayout>
@@ -154,7 +162,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+            ads:adUnitId="@string/banner_ads_unit_id">
 
         </com.google.android.gms.ads.AdView>
       </com.google.android.material.bottomappbar.BottomAppBar>

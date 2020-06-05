@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -19,6 +21,7 @@ public class SplashScreen extends AppCompatActivity {
 
     Animation animation;
     ImageView splash_logo;
+    LinearLayout baloonsLL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,9 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         splash_logo= findViewById(R.id.splashlogo);
+        baloonsLL = findViewById(R.id.ballonsLL);
 
-        animation = AnimationUtils.loadAnimation(SplashScreen.this, R.anim.bounce);
+        animation = AnimationUtils.loadAnimation(SplashScreen.this, R.anim.buttom_up);
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     "com.anythingjyoti.newkinder",
@@ -40,18 +44,18 @@ public class SplashScreen extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
 
         }
-        splash_logo.setAnimation(animation);
+        baloonsLL.setAnimation(animation);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
 
-                    Intent intent = new Intent(SplashScreen.this,LoginActivity.class);
+                    Intent intent = new Intent(SplashScreen.this,MenuActivity.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 
 
                 }
-            },2500);
+            },4000);
         }
     }
 
