@@ -9,60 +9,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-  <com.google.android.material.appbar.AppBarLayout
-      android:visibility="gone"
-      android:layout_width="match_parent"
-      android:layout_height="60dp"
-      android:id="@+id/app_bar_layout"
-      android:background="@color/colorPrimaryDark">
-
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:id="@+id/tool_layout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true">
-
-      <de.hdodenhof.circleimageview.CircleImageView
-          android:id="@+id/image_view"
-          android:layout_weight="1"
-          android:layout_width="50dp"
-          android:layout_height="50dp"
-          android:padding="5dp"
-          android:src="@drawable/ic_launcher_background"/>
-
-
-      <LinearLayout
-          android:layout_gravity="center"
-          android:layout_weight="10"
-          android:orientation="vertical"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-        <TextView
-            android:textSize="35dp"
-            android:textColor="#fff"
-            android:layout_gravity="center"
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:text="@string/app_name"
-            android:textStyle="bold" />
-
-      </LinearLayout>
-      <ImageView
-          android:id="@+id/logout"
-          android:layout_gravity="end"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:src="@drawable/power"/>
-    </LinearLayout>
-
-
-  </com.google.android.material.appbar.AppBarLayout>
-
   <LinearLayout
       android:background="@drawable/background"
       android:layout_weight="60"
@@ -74,27 +20,43 @@
         android:layout_height="match_parent"
         tools:ignore="UselessParent">
 
+        <TextView
+            android:textColor="#ffff"
+            android:id="@+id/letterTV"
+            android:text=""
+            android:textSize="200dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
       <TextView
+          android:text=""
+          android:textSize="40dp"
           android:textColor="#ffff"
-          android:id="@+id/letterTV"
-          android:text="A"
-          android:fontFamily="@font/whale"
-          android:textSize="200dp"
-          android:gravity="center_horizontal"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"/>
-
-
-      <Button
-          android:background="@drawable/next"
+          android:gravity="center"
           android:id="@+id/nextLetterBT"
-          android:layout_marginRight="30dp"
-          android:layout_alignParentEnd="true"
+          android:layout_marginRight="10dp"
           android:layout_marginBottom="10dp"
           android:layout_alignParentBottom="true"
-          android:layout_width="70dp"
-          android:layout_height="60dp"
+          android:layout_width="80dp"
+          android:layout_height="wrap_content"
           android:layout_alignParentRight="true" />
+
+
+        <TextView
+            android:text=""
+            android:textSize="40dp"
+            android:textColor="#ffff"
+            android:gravity="center"
+            android:id="@+id/backLetterBT"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true" />
 
 
     </RelativeLayout>
@@ -132,9 +94,17 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true" />
 
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+          android:background="@drawable/home"
+          android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+          android:layout_marginLeft="10dp"
+          android:id="@+id/homeBT"/>
+
+
       </RelativeLayout>
-
-
 
 
     </LinearLayout>

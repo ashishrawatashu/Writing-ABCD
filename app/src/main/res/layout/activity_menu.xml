@@ -7,122 +7,92 @@
     android:orientation="vertical"
     android:background="@drawable/pic"
     tools:context=".MenuActivity">
-    <com.google.android.material.appbar.AppBarLayout
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/app_bar_layout"
-        android:background="@color/colorPrimaryDark">
-
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:id="@+id/tool_layout"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_view"
-                android:layout_weight="1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="5dp"
-                android:src="@drawable/ic_launcher_background"/>
-
-
-            <LinearLayout
-                android:layout_gravity="center"
-                android:layout_weight="10"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:textSize="35dp"
-                    android:textColor="#fff"
-                    android:layout_gravity="center"
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:text="@string/app_name"
-                    android:textStyle="bold" />
 
 
 
-            </LinearLayout>
-
-
-            <ImageView
-                android:id="@+id/logout"
-                android:layout_gravity="end"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/power"/>
-
-
-        </LinearLayout>
-
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_marginRight="100dp"
         android:layout_marginLeft="100dp"
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:textColor="#ffff"
-        android:background="@drawable/button_round"
-        android:id="@+id/write_ABC_BT"
-        android:text="ABC"
-        android:textSize="50dp"
-        android:fontFamily="@font/unicorn"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"/>
+
+
 
         <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/write_ABC_BT"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/unicorn"
+            android:text="ABC"
+            android:textAllCaps="false"
             android:textColor="#ffff"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/write_abc_BT"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="50dp"
+            android:layout_height="70dp"
             android:background="@drawable/button_yellow"
             android:fontFamily="@font/unicorn"
             android:text="abc"
             android:textAllCaps="false"
-            android:textStyle="bold"/>
-
-        <Button
             android:textColor="#ffff"
             android:textSize="50dp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/write_123_BT"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_green"
-            android:textAllCaps="false"
-            android:id="@+id/write_123_BT"
-            android:text="123"
             android:fontFamily="@font/unicorn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"/>
+            android:text="123"
+            android:textAllCaps="false"
+            android:textColor="#ffff"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
 
-    <Button
-        android:visibility="gone"
-        android:layout_margin="30dp"
-        android:layout_alignParentEnd="true"
+    <LinearLayout
         android:layout_alignParentBottom="true"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/share"
-        android:layout_alignParentRight="true" />
+        android:background="@color/colorPrimary"
+        android:layout_weight="10"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="BottomAppBar,NotSibling">
+            <com.google.android.gms.ads.AdView
+
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ads_unit_id">
+
+            </com.google.android.gms.ads.AdView>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.abcd;
+package com.cynoteck.kidsFun2Write;
 
 import org.junit.Test;
 
